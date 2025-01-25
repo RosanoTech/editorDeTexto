@@ -1,0 +1,37 @@
+<!DOCTYPE html><!--Indica que este é um documento HTML5.-->
+<html lang="pt-BR"><!--Define que o idioma principal do documento é português do Brasil.-->
+<head>
+  <meta charset="UTF-8"><!--Define a codificação de caracteres como UTF-8, permitindo caracteres especiais, como acentos.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--isso faz o layout ser adaptável a diferentes tamanhos de tela (responsivo), como em dispositivos móveis.-->>
+  <title>Editor de texto📃</title>
+  <link rel="stylesheet" href="style.css"><!--Importa o arquivo CSS externo, que define o estilo da página.-->
+</head>
+<body>
+  <div class="container">
+    <div>
+      <button class="PaintWeb" onclick="PaintWeb()">🎨</button>
+      <button class="Recognitionvoz"onclick="startRecognition()">🎙️</button>
+      <button class="leftarrow" onclick="alignLeft()">←</button>
+      <button class="centerbutton" onclick="centerText()">→←</button>
+      <button class="rightarrow" onclick="alignRight()">→</button>
+    </div>
+    
+    <textarea id="styledTextarea" rows="10" cols="50" placeholder="Escreva aqui..."></textarea><!--Área de texto onde o usuário pode digitar. O atributo placeholder mostra o texto "Escreva aqui..-->
+
+    <!-- menu suspenso (dropdown) para selecionar diferentes fontes. Cada <option> define uma fonte diferente.--> 
+    <select id="fontSelector" onchange="MudarFont()"> <!--A função oncharge= "MudarFont()" é chamada sempre que o usuário altera a fonte.-->
+        <option value="'Roboto', sans-serif">Roboto</option>
+        <option value="'Courier Prime', monospace">Courier Prime</option>
+        <option value="'Pixelify Sans', sans-serif">Pixelify Sans</option>
+        <option value="'Jersey 25', cursive">Jersey 25</option>
+        <option value="'Monoton', cursive">Monoton</option>
+    </select>
+    <button class="Aumentar" onclick="changeFontSize('increase')">Aumentar Tela</button><!---->
+    <button onclick="changeFontSize('decrease')">Diminuir Tela</button><!---->
+    <button onclick="boldText()">Negrito</button>
+    <input type="color" id="color" value="#f70505"><!--um input do tipo color-->
+  </div>
+  
+  <script src="main.js"></script><!--Esse <script> carrega o arquivo JavaScript main.js, que contém as funções que os botões utilizam (como startRecognition(), alignLeft(), etc.).-->
+</body>
+</html>
